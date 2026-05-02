@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+@variant dark (&:where(.dark, .dark *));
+
+@utility container {
+  margin-inline: auto;
+  padding-inline: 2rem;
+}
+
+@theme{
+  --breakpoint-2xl:1400px;
+  --color-soft-pink: #FFF5F7;
+  --color-dark-gray: #1a1a1a;
+}
+
+body {
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::selection{
+  background-color: #FDA5D5;
+}
