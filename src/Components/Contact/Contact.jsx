@@ -1,31 +1,66 @@
-import { useRef } from "react";
-import { FaLinkedin, FaGithub, FaEnvelope, FaPhoneAlt, FaPaperPlane } from "react-icons/fa";
+import { useRef, useState } from "react";
+import {
+  FaLinkedin,
+  FaGithub,
+  FaEnvelope,
+  FaPhoneAlt,
+  FaPaperPlane,
+} from "react-icons/fa";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
 export default function Contact() {
   const container = useRef();
+  const [result, setResult] = useState("");
 
-  useGSAP(() => {
-    gsap.from(".contact-item", {
-      x: -50,
-      opacity: 0,
-      duration: 0.8,
-      stagger: 0.2,
-      ease: "power3.out",
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    setResult("Sending....");
+    const formData = new FormData(event.target);
+
+    // الـ Access Key بتاعك
+    formData.append("access_key", "f01f1cad-b7f4-4ff5-a72a-0ce552a796b5");
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData,
     });
-    gsap.from(".contact-form", {
-      x: 50,
-      opacity: 0,
-      duration: 0.8,
-      ease: "power3.out",
-    });
-  }, { scope: container });
+
+    const data = await response.json();
+
+    if (data.success) {
+      setResult("Success! Message Sent.");
+      event.target.reset(); // السطر اللي بيمسح البيانات من الفورم
+      
+      // بيرجع الزرار لشكلة الطبيعي بعد 4 ثواني
+      setTimeout(() => setResult(""), 4000);
+    } else {
+      setResult("Error! Try again.");
+    }
+  };
+
+  useGSAP(
+    () => {
+      gsap.from(".contact-item", {
+        x: -50,
+        opacity: 0,
+        duration: 0.8,
+        stagger: 0.2,
+        ease: "power3.out",
+      });
+      gsap.from(".contact-form", {
+        x: 50,
+        opacity: 0,
+        duration: 0.8,
+        ease: "power3.out",
+      });
+    },
+    { scope: container }
+  );
 
   return (
-    <section ref={container} className="px-6 flex items-center">
+    <section ref={container} className="px-6 py-20 flex items-center">
       <div className="max-w-6xl mx-auto w-full">
-        
         <div className="mb-16">
           <h2 className="text-4xl md:text-5xl font-black text-slate-900 dark:text-white mb-4">
             Get In <span className="text-pink-300">Touch</span>
@@ -34,10 +69,11 @@ export default function Contact() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-          
           <div className="space-y-8">
             <p className="text-lg text-slate-600 dark:text-gray-400 leading-relaxed max-w-md">
-              Passionate about building clean UIs and learning new technologies. I'm always open to discussing frontend trends or exploring full-time opportunities with innovative teams.
+              Passionate about building clean UIs and learning new technologies.
+              I'm always open to discussing frontend trends or exploring
+              full-time opportunities with innovative teams.
             </p>
 
             <div className="space-y-6">
@@ -79,29 +115,51 @@ export default function Contact() {
             </div>
           </div>
 
-          <div className="contact-form bg-slate-50 dark:bg-dark-gray p-8 md:p-10 rounded-4xl border border-gray-100 dark:border-white/5 shadow-xl">
-            <form className="space-y-6">
+          {/* Form Section */}
+          <div className="contact-form bg-slate-50 dark:bg-slate-800 p-8 md:p-10 rounded-4xl border border-gray-100 dark:border-white/5 shadow-xl">
+            <form className="space-y-6" onSubmit={onSubmit}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <label className="text-sm font-bold text-slate-700 dark:text-gray-300 ml-1">Your Name</label>
-                  <input type="text" placeholder="Huda Islam" className="w-full p-4 bg-white dark:bg-dark-gray border border-gray-200 dark:border-white/10 rounded-xl focus:outline-none focus:border-pink-400 dark:text-white transition-colors" />
+                  <input
+                    name="name" // ضفنا الـ name هنا
+                    required
+                    type="text"
+                    placeholder="Huda Islam"
+                    className="w-full p-4 bg-white dark:bg-slate-900 border border-gray-200 dark:border-white/10 rounded-xl focus:outline-none focus:border-pink-400 dark:text-white transition-colors"
+                  />
                 </div>
                 <div className="space-y-2">
                   <label className="text-sm font-bold text-slate-700 dark:text-gray-300 ml-1">Email Address</label>
-                  <input type="email" placeholder="hudaeslam@example.com" className="w-full p-4 bg-white dark:bg-dark-gray border border-gray-200 dark:border-white/10 rounded-xl focus:outline-none focus:border-pink-400 dark:text-white transition-colors" />
+                  <input
+                    name="email" // ضفنا الـ name هنا
+                    required
+                    type="email"
+                    placeholder="hudaeslam@example.com"
+                    className="w-full p-4 bg-white dark:bg-slate-900 border border-gray-200 dark:border-white/10 rounded-xl focus:outline-none focus:border-pink-400 dark:text-white transition-colors"
+                  />
                 </div>
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-bold text-slate-700 dark:text-gray-300 ml-1">Message</label>
-                <textarea rows="3" placeholder="How can I help you?" className="w-full p-4 bg-white dark:bg-dark-gray border border-gray-200 dark:border-white/10 rounded-xl dark:text-white transition-colors resize-none"></textarea>
+                <textarea
+                  name="message" // ضفنا الـ name هنا
+                  required
+                  rows="3"
+                  placeholder="How can I help you?"
+                  className="w-full p-4 bg-white dark:bg-slate-900 border border-gray-200 dark:border-white/10 rounded-xl dark:text-white transition-colors resize-none"
+                ></textarea>
               </div>
-              <button className="w-full py-4 bg-pink-300 text-white font-bold rounded-xl shadow-lg hover:bg-pink-400 transition-all flex items-center justify-center gap-3 group cursor-pointer">
-                Send Message
+              <button
+                className="w-full py-4 bg-pink-300 text-white font-bold rounded-xl shadow-lg hover:bg-pink-400 transition-all flex items-center justify-center gap-3 group cursor-pointer disabled:bg-gray-400"
+                type="submit"
+                disabled={result === "Sending...."}
+              >
+                {result ? result : "Send Message"}
                 <FaPaperPlane className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
               </button>
             </form>
           </div>
-
         </div>
       </div>
     </section>
