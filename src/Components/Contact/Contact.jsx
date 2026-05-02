@@ -18,7 +18,6 @@ export default function Contact() {
     setResult("Sending....");
     const formData = new FormData(event.target);
 
-    // الـ Access Key بتاعك
     formData.append("access_key", "f01f1cad-b7f4-4ff5-a72a-0ce552a796b5");
 
     const response = await fetch("https://api.web3forms.com/submit", {
@@ -30,9 +29,8 @@ export default function Contact() {
 
     if (data.success) {
       setResult("Success! Message Sent.");
-      event.target.reset(); // السطر اللي بيمسح البيانات من الفورم
+      event.target.reset(); 
       
-      // بيرجع الزرار لشكلة الطبيعي بعد 4 ثواني
       setTimeout(() => setResult(""), 4000);
     } else {
       setResult("Error! Try again.");
@@ -59,7 +57,7 @@ export default function Contact() {
   );
 
   return (
-    <section ref={container} className="px-6 py-20 flex items-center">
+    <section ref={container} className="px-6 flex items-center">
       <div className="max-w-6xl mx-auto w-full">
         <div className="mb-16">
           <h2 className="text-4xl md:text-5xl font-black text-slate-900 dark:text-white mb-4">
@@ -115,14 +113,13 @@ export default function Contact() {
             </div>
           </div>
 
-          {/* Form Section */}
           <div className="contact-form bg-slate-50 dark:bg-slate-800 p-8 md:p-10 rounded-4xl border border-gray-100 dark:border-white/5 shadow-xl">
             <form className="space-y-6" onSubmit={onSubmit}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <label className="text-sm font-bold text-slate-700 dark:text-gray-300 ml-1">Your Name</label>
                   <input
-                    name="name" // ضفنا الـ name هنا
+                    name="name" 
                     required
                     type="text"
                     placeholder="Huda Islam"
@@ -132,7 +129,7 @@ export default function Contact() {
                 <div className="space-y-2">
                   <label className="text-sm font-bold text-slate-700 dark:text-gray-300 ml-1">Email Address</label>
                   <input
-                    name="email" // ضفنا الـ name هنا
+                    name="email" 
                     required
                     type="email"
                     placeholder="hudaeslam@example.com"
