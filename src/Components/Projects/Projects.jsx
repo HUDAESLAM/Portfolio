@@ -1,10 +1,7 @@
 import {  FaExternalLinkAlt } from "react-icons/fa";
-import { SiNextdotjs, SiTypescript, SiTailwindcss, SiReact, SiAxios, SiJavascript, SiBootstrap, SiHtml5 } from "react-icons/si";
+import { SiNextdotjs, SiTypescript, SiTailwindcss, SiAxios, SiJavascript, SiBootstrap, SiHtml5 } from "react-icons/si";
 import Ecommerce from "../../assets/Ecommerce.png"
-import LinkedPostsImage from "../../assets/LinkedPosts.png"
 import BookmarkImage from "../../assets/bookmark.png"
-import weather from "../../assets/Weather.png"
-
 const projects = [
   {
     id: 1,
@@ -18,7 +15,7 @@ const projects = [
   },
 
   {
-    id: 3,
+    id: 2,
     title: "Bookmark Manager",
     category: "Web Tool",
     image: BookmarkImage , 
@@ -26,16 +23,6 @@ const projects = [
     tags: ["JavaScript", "Bootstrap", "LocalStorage"],
     icons: [<SiJavascript />, <SiBootstrap />, <SiHtml5 />],
     demo: "https://hudaeslam.github.io/Bookmark/"
-  },
-  {
-    id: 4,
-    title: "Weather App",
-    category: "API & Dynamic UI",
-    image: weather , 
-    description: "A real-time weather forecasting application that fetches live data from external APIs. Features a dynamic UI that updates based on weather conditions, providing accurate forecasts and location-based insights with a responsive design.",
-    tags: ["JavaScript", "Bootstrap", "LocalStorage"],
-    icons: [<SiJavascript />, <SiBootstrap />, <SiHtml5 />],
-    demo: "https://hudaeslam.github.io/Weather/"
   },
 ];
 
@@ -65,7 +52,7 @@ export default function Projects() {
                 
                 <div className="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   
-                  <a href={project.demo} className="p-4 bg-white text-black rounded-full hover:bg-pink-300 hover:text-white transition-all transform hover:scale-110 shadow-2xl">
+                  <a href={project.demo} target="_blank" rel="noopener noreferrer" className="p-4 bg-white text-black rounded-full hover:bg-pink-300 hover:text-white transition-all transform hover:scale-110 shadow-2xl">
                     <FaExternalLinkAlt size={20} />
                   </a>
                 </div>
