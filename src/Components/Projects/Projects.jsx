@@ -1,7 +1,8 @@
 import {  FaExternalLinkAlt } from "react-icons/fa";
-import { SiNextdotjs, SiTypescript, SiTailwindcss, SiAxios, SiJavascript, SiBootstrap, SiHtml5 } from "react-icons/si";
+import { SiNextdotjs, SiTypescript, SiTailwindcss, SiAxios, SiJavascript, SiBootstrap, SiHtml5, SiReact } from "react-icons/si";
 import Ecommerce from "../../assets/Ecommerce.png"
 import BookmarkImage from "../../assets/bookmark.png"
+import socialImage from "../../assets/socialImage.png"
 const projects = [
   {
     id: 1,
@@ -13,9 +14,18 @@ const projects = [
     icons: [<SiNextdotjs />, <SiTypescript />, <SiTailwindcss />, <SiAxios />],
     demo: "https://e-commerce1-ashen.vercel.app/"
   },
-
   {
     id: 2,
+    title: "LinkedPosts",
+    category: "Social Media App",
+    image: socialImage , 
+    description: "A professional social platform featuring full CRUD for posts and comments. Built with React for a responsive UI and integrated with RESTful APIs and secure Login/Signup authentication.",
+    tags: ["React", "Axios", "Tailwind", "REST API", "Auth"],
+    icons: [<SiReact />,<SiTailwindcss />, <SiAxios />,<SiJavascript />],
+    demo: "https://route-pages.vercel.app/"
+  },
+  {
+    id: 3,
     title: "Bookmark Manager",
     category: "Web Tool",
     image: BookmarkImage , 
