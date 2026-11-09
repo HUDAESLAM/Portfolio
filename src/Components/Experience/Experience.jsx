@@ -2,7 +2,7 @@ import  { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { FaBriefcase, FaGraduationCap, FaCode, FaChalkboardTeacher } from "react-icons/fa";
+import { FaBriefcase, FaGraduationCap, FaCode, FaChalkboardTeacher, FaUsers, FaUserCheck, FaTasks } from "react-icons/fa";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -13,7 +13,7 @@ const experiences = [
     company: "iSchool | Digital Egypt Cubs Initiative (DECI)",
     date: "06/2026 - 09/2026",
     description: [
-      "Mentored and educated youth on core computer science fundamentals, algorithmic thinking, and problem-solving techniques.",
+      "Mentored and educated youth on core computer science fundamentals, algorithmic thinking and problem-solving techniques.",
       "Delivered interactive coding workshops for diverse groups, achieving high student engagement and hands-on skill retention.",
       "Evaluated individual progress, providing personalized technical coaching to resolve complex learning blockers efficiently.",
       "Guided students through building end-to-end practical projects, translating technical concepts into actionable, easy-to-grasp solutions.",
@@ -23,12 +23,26 @@ const experiences = [
   },
   {
     id: 2,
+    title: "Online Operations & Community Coordinator",
+    company: "EYouth (ITIDA Gigs Project)",
+    date: "07/2025 - 04/2026",
+    description: [
+      "Managed communication and provided end-to-end operational support for 500+ participants, maximizing retention and program satisfaction.",
+      "Resolved technical and logistical blockers for students, ensuring seamless navigation of digital learning platforms and tools.",
+      "Structured and coordinated online session schedules between trainers and participants, maintaining strict adherence to timelines.",
+      "Monitored live session execution, attendance metrics and performance reporting to ensure high training quality control.",
+      "Cross-collaborated with multi-functional teams to streamline workflows and optimize overall program operations."
+    ],
+    icon: <FaBriefcase />,
+  },
+  {
+    id: 3,
     title: "Frontend Developer Trainee",
     company: "Route - IT Training Center",
     date: "02/2025 - 09/2025 ",
     description: [
       "Architected and developed high performance web applications using React.js and Next.js,leveraging TypeScript to ensure static typing and maintainable code.",
-      "Optimized web performance and improved Lighthouse scores by implementing code splitting, lazy loading, and image optimization.",
+      "Optimized web performance and improved Lighthouse scores by implementing code splitting, lazy loading and image optimization.",
       "Developed pixel-perfect, responsive UI designs from scratch using Tailwind CSS and Bootstrap, ensuring compatibility across all mobile and desktop devices.",
       "Implemented secure JWT Authentication flows and managed protected routes to enhance application security and session management.",
       "Integrated complex RESTful APIs and handled asynchronous data fetching using Axios, ensuring seamless data flow between frontend and backend.",
@@ -39,7 +53,7 @@ const experiences = [
     icon: <FaBriefcase />,
   },
   {
-    id: 3,
+    id: 4,
     title: "Frontend Developer (Graduation Project) ",
     company: "BabyWhisper App ",
     date: "10/2024 - 07/2025 ",
@@ -47,18 +61,59 @@ const experiences = [
       "Designed and implemented responsive frontend architecture using React.js.",
       "Translated complex Figma prototypes into functional UIs.",
       "Managed end-to-end API communication and debugged endpoints using Postman to ensure 100% data accuracy.",
-      "Built a fully authenticated system with secure user login, signup, and profile management features.",
+      "Built a fully authenticated system with secure user login, signup and profile management features.",
       "Coordinated with the backend team in an Agile environment to deliver a production-ready application within strict deadlines.",
     ],
     icon: <FaCode />,
   },
   {
-    id: 4,
+    id: 5,
+    title: "Online Coordinator",
+    company: "EYouth Company",
+    date: "07/2024 - 06/2025",
+    description: [
+      "Facilitated seamless communication channels between online instructors, students and administrative stakeholders.",
+      "Provided rapid incident management and troubleshooting for online learning management systems (LMS) and virtual classrooms.",
+      "Tracked student participation metrics and generated analytics reports to identify and address learning irregularities proactively.",
+      "Coordinated virtual events, large-scale training workshops and executive meetings across multiple digital environments.",
+      "Optimized educational logistics, resource allocation and facility scheduling to improve operational throughput."
+    ],
+    icon: <FaUsers />,
+  },
+  {
+    id: 6,
+    title: "Educational Operations Coordinator",
+    company: "Almentor Company",
+    date: "08/2024 - 10/2024",
+    description: [
+      "Served as the key liaison between instructors and the core educational development team to align learning objectives.",
+      "Assessed student progress and instructor metrics, delivering actionable feedback and strategic guidance to optimize outcomes.",
+      "Led and participated in stakeholder evaluation meetings to address curriculum enhancements and educational challenges.",
+      "Facilitated professional onboarding and specialized training programs for both instructors and learners.",
+      "Conducted comprehensive needs assessments to identify knowledge gaps and enhance instructional methodologies."
+    ],
+    icon: <FaUserCheck />,
+  },
+  {
+    id: 7,
+    title: "Program Coordinator",
+    company: "Almentor / Digital Egypt Pioneers Initiative (DEPI)",
+    date: "01/2023 - 10/2024",
+    description: [
+      "Orchestrated meeting schedules, resource alignment and logistics for cross-functional project contributors.",
+      "Authored professional internal communication assets, operational updates and documentation for key initiative milestones.",
+      "Reviewed and refined instructional and operational deliverables to ensure compliance with strict quality control frameworks.",
+      "Edited, formatted , approved final digital products and training resources in accordance with enterprise guidelines."
+    ],
+    icon: <FaTasks />,
+  },
+  {
+    id: 8,
     title: "Frontend Development Trainee ",
     company: "Digital Egypt Pioneers Initiative (DEPI)",
     date: "06/2023 - 02/2024 ",
     description: [
-      "Mastered modern web development fundamentals, including ES6+ JavaScript, HTML5, and CSS3.",
+      "Mastered modern web development fundamentals, including ES6+ JavaScript, HTML5 and CSS3.",
       "Applied UI/UX principles to enhance web usability.",
       "Built several responsive web projects using Mobile-First design approaches and modern CSS layout techniques.",
       "Enhanced professional soft skills, including effective communication, team collaboration and time management.",
