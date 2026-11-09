@@ -2,6 +2,10 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import cer1 from "../../assets/HUDA.png";
 import cer2 from "../../assets/HudaIslamKhalifa.png";
+import cer3 from "../../assets/Huda Eslam.jpg"
+import cer4 from "../../assets/Hoda Islam Mamdouh Soliman Khalifa.jpg"
+import cer5 from "../../assets/Certificate.jpeg"
+
 import { useRef, useState } from "react";
 
 const certsData = [
@@ -17,6 +21,25 @@ const certsData = [
     issuer: "Digital Egypt Pioneers Program (DEPI)",
     image: cer2,
   },
+  {
+    id: 3,
+    title: "Online Operations & Community Coordinator",
+    issuer: "EYouth (ITIDA Gigs Project)",
+    image: cer3,
+  },
+  {
+    id: 4,
+    title: "Almentor",
+    issuer: "Educational Operations Coordinator",
+    image: cer4,
+  },
+  {
+    id: 1,
+    title: "Software Engineer",
+    issuer: "Graduation Certificate",
+    image: cer5,
+  },
+  
 ];
 
 export default function Certificates() {
@@ -97,7 +120,7 @@ export default function Certificates() {
             >
               <img
                 src={selectedImage}
-                className="w-full h-auto rounded-xl shadow-2xl border-4 border-white/10"
+                className="w-fit h-screen rounded-xl shadow-2xl border-4 border-white/10"
                 alt="Preview"
               />
 
