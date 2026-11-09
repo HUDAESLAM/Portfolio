@@ -28,13 +28,13 @@ const certsData = [
     image: cer3,
   },
   {
-    id: 4,
+    id: 5,
     title: "Almentor",
     issuer: "Educational Operations Coordinator",
     image: cer4,
   },
   {
-    id: 1,
+    id: 6,
     title: "Software Engineer",
     issuer: "Graduation Certificate",
     image: cer5,
