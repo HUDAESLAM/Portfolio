@@ -3,7 +3,7 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import Huda from "../../assets/HUDA.jpeg";
 import { Link } from "react-router-dom";
-import myCV from "../../../public/Huda-Eslam-Cv.pdf";
+import myCV from "../../../public/Huda_Eslam_Resume.pdf";
 
 export default function Home() {
   const container = useRef();
@@ -111,7 +111,7 @@ export default function Home() {
 
               <a
                 href={myCV}
-                download="Huda-Eslam-CV.pdf"
+                download="Huda_Eslam_Resume.pdf"
                 className="px-7 py-2.5 text-pink-300 dark:text-pink-300 rounded-full font-bold text-lg 
                 hover:bg-pink-50 hover:dark:bg-pink-900/20 hover:scale-95 active:scale-95 
                 transition-all duration-300 flex items-center gap-2"

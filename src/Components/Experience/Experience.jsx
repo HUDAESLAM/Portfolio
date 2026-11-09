@@ -2,13 +2,27 @@ import  { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { FaBriefcase, FaGraduationCap, FaCode } from "react-icons/fa";
+import { FaBriefcase, FaGraduationCap, FaCode, FaChalkboardTeacher } from "react-icons/fa";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const experiences = [
   {
-    id: 1,
+    id :1,
+    title : "Programming Instructor",
+    company: "iSchool | Digital Egypt Cubs Initiative (DECI)",
+    date: "06/2026 - 09/2026",
+    description: [
+      "Mentored and educated youth on core computer science fundamentals, algorithmic thinking, and problem-solving techniques.",
+      "Delivered interactive coding workshops for diverse groups, achieving high student engagement and hands-on skill retention.",
+      "Evaluated individual progress, providing personalized technical coaching to resolve complex learning blockers efficiently.",
+      "Guided students through building end-to-end practical projects, translating technical concepts into actionable, easy-to-grasp solutions.",
+      "Fostered a collaborative, high-energy learning environment focused on modern digital literacy and logical reasoning."
+    ],
+    icon: <FaChalkboardTeacher />,
+  },
+  {
+    id: 2,
     title: "Frontend Developer Trainee",
     company: "Route - IT Training Center",
     date: "02/2025 - 09/2025 ",
@@ -25,7 +39,7 @@ const experiences = [
     icon: <FaBriefcase />,
   },
   {
-    id: 2,
+    id: 3,
     title: "Frontend Developer (Graduation Project) ",
     company: "BabyWhisper App ",
     date: "10/2024 - 07/2025 ",
@@ -39,7 +53,7 @@ const experiences = [
     icon: <FaCode />,
   },
   {
-    id: 3,
+    id: 4,
     title: "Frontend Development Trainee ",
     company: "Digital Egypt Pioneers Initiative (DEPI)",
     date: "06/2023 - 02/2024 ",
